@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Response Collection - Action Plans</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Token gate -->
+  <div id="gate" class="gate">
+    <h1 style="color:var(--navy)">Response Collection</h1>
+    <p class="es">Recolección de respuestas</p>
+    <p class="guide"><span class="en">Enter the admin token to view submitted action plans.</span></p>
+    <input type="password" id="tokenInput" placeholder="Admin token">
+    <div><button class="btn" id="enterBtn">View responses / Ver respuestas</button></div>
+    <p id="gateErr" class="status err"></p>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dash" hidden>
+    <div class="dash-head">
+      <div>
+        <h1>Response Collection <span id="countPill" class="count-pill">0</span></h1>
+        <p class="series">Responsive Classroom Individual Action Plan&nbsp;&nbsp;|&nbsp;&nbsp;Mundo Verde</p>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <input type="text" id="filter" placeholder="Filter by name or campus / Filtrar por nombre o sede">
+      <button class="btn ghost" id="refreshBtn">Refresh / Actualizar</button>
+      <button class="btn" id="csvBtn">Export CSV / Exportar CSV</button>
+      <button class="link-btn" id="logoutBtn" style="margin-left:auto">Sign out / Salir</button>
+    </div>
+
+    <table class="responses">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name / Nombre</th>
+          <th>Campus / Sede</th>
+          <th>Plan date / Fecha</th>
+          <th>Submitted / Enviado</th>
+          <th>Status / Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div id="emptyState" class="empty" hidden>No submissions yet. / Aún no hay envíos.</div>
+
+    <div id="detail" class="detail" hidden></div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
